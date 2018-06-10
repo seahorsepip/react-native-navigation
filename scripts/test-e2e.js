@@ -9,7 +9,6 @@ const headless = _.includes(process.argv, '--headless');
 run();
 
 function run() {
-    const platform = android ? `android` : `ios`;
     const prefix = android ? `android.emu` : `ios.sim`;
     const suffix = release ? `release` : `debug`;
     const configuration = `${prefix}.${suffix}`;
@@ -19,5 +18,5 @@ function run() {
     if (!skipBuild) {
         exec.execSync(`detox build --configuration ${configuration}`);
     }
-    exec.execSync(`detox test --configuration ${configuration} --platform ${platform} ${cleanup} ${headless$}`);
+    exec.execSync(`detox test --configuration ${configuration} ${cleanup} ${headless$} --loglevel verbose`);
 }
