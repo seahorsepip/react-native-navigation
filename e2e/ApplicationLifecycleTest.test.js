@@ -8,7 +8,7 @@ const { elementByLabel, elementById, sleep } = Utils;
 const IS_RELEASE = _.includes(process.argv, '--release');
 const KEY_CODE_R = 46;
 
-describe('application lifecycle test', () => {
+describe.skip('application lifecycle test', () => {
   beforeEach(async () => {
     await device.relaunchApp();
   });
