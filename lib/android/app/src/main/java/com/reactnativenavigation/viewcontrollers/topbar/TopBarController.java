@@ -19,6 +19,7 @@ public class TopBarController {
         if (topBar == null) {
             topBar = createTopBar(context, buttonCreator, titleBarReactViewCreator, topBarBackgroundViewController, topBarButtonClickListener, stackLayout);
             topBar.setId(CompatUtils.generateViewId());
+            topBar.setY(50);
         }
         return topBar;
     }
